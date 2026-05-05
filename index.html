@@ -4,250 +4,314 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Vikas Dulgunde — Backend Engineer</title>
-<meta name="description" content="Backend engineer with 6 years of experience building Node.js and TypeScript services, REST APIs, and secure microservices." />
+<meta name="description" content="Backend engineer. Six years of Node.js and TypeScript in production. Based in London." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --bg: #ffffff;
-    --ink: #0f172a;
-    --muted: #475569;
-    --line: #e2e8f0;
-    --accent: #2563eb;
-    --chip: #f1f5f9;
+  :root{
+    --bg:#0e0e10;
+    --ink:#f4f1ea;
+    --muted:#8a8478;
+    --line:#26252a;
+    --accent:#ff5b1f;
+    --accent-soft:#ffb38a;
   }
-  * { box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-  body {
-    margin: 0;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    color: var(--ink);
-    background: var(--bg);
-    line-height: 1.6;
-    font-size: 16px;
-    -webkit-font-smoothing: antialiased;
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);color:var(--ink);
+    font-family:'Inter',system-ui,sans-serif;
+    font-size:15px;line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
   }
-  .wrap { max-width: 760px; margin: 0 auto; padding: 80px 32px 120px; }
-  ::selection { background: var(--accent); color: #fff; }
+  ::selection{background:var(--accent);color:#0e0e10}
+  a{color:inherit;text-decoration:none}
 
-  header { margin-bottom: 64px; }
-  h1 {
-    font-size: 32px;
-    font-weight: 600;
-    letter-spacing: -0.02em;
-    margin: 0 0 8px;
-  }
-  .role { color: var(--muted); font-size: 16px; margin: 0 0 20px; }
-  .meta {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px 20px;
-    font-size: 14px;
-    color: var(--muted);
-  }
-  .meta a { color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--line); }
-  .meta a:hover { border-color: var(--accent); color: var(--accent); }
-
-  section { margin-top: 56px; }
-  h2 {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 12px;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
-    color: var(--muted);
-    margin: 0 0 24px;
-    padding-bottom: 12px;
-    border-bottom: 1px solid var(--line);
-  }
-  p { margin: 0 0 16px; }
-  p.lead { font-size: 17px; }
-
-  .job { margin-bottom: 32px; }
-  .job:last-child { margin-bottom: 0; }
-  .job-head {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    gap: 16px;
-    margin-bottom: 4px;
-  }
-  .job-title { font-weight: 600; font-size: 16px; }
-  .job-co { color: var(--muted); font-size: 14px; }
-  .job-date {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 12px;
-    color: var(--muted);
-    white-space: nowrap;
-  }
-  ul { margin: 12px 0 0; padding-left: 18px; }
-  li { margin-bottom: 6px; color: var(--muted); }
-  li::marker { color: var(--line); }
-
-  .skills { display: grid; grid-template-columns: 140px 1fr; gap: 16px 24px; font-size: 14px; }
-  .skills dt {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 12px;
-    color: var(--muted);
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    padding-top: 2px;
-  }
-  .skills dd { margin: 0; color: var(--ink); }
-
-  .edu-row {
-    display: flex;
-    justify-content: space-between;
-    gap: 16px;
-    margin-bottom: 16px;
-  }
-  .edu-row:last-child { margin-bottom: 0; }
-  .edu-main { font-size: 15px; }
-  .edu-sub { color: var(--muted); font-size: 14px; }
-  .edu-date {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 12px;
-    color: var(--muted);
-    white-space: nowrap;
+  .grain::before{
+    content:"";position:fixed;inset:0;pointer-events:none;z-index:100;opacity:.06;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
   }
 
-  footer {
-    margin-top: 80px;
-    padding-top: 24px;
-    border-top: 1px solid var(--line);
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 12px;
-    color: var(--muted);
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 12px;
+  .shell{max-width:1180px;margin:0 auto;padding:0 40px}
+
+  /* TOP BAR */
+  nav.top{
+    display:flex;justify-content:space-between;align-items:center;
+    padding:28px 0;font-family:'JetBrains Mono',monospace;font-size:12px;
+    letter-spacing:.08em;text-transform:uppercase;color:var(--muted);
+  }
+  nav.top .dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--accent);margin-right:10px;animation:blink 2.4s infinite}
+  @keyframes blink{0%,60%,100%{opacity:1}70%,90%{opacity:.2}}
+  nav.top a:hover{color:var(--ink)}
+  nav.top .links{display:flex;gap:24px}
+
+  /* HERO */
+  header.hero{padding:80px 0 100px;border-bottom:1px solid var(--line)}
+  .kicker{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:32px}
+  h1.name{
+    font-family:'Fraunces',serif;font-weight:400;
+    font-size:clamp(56px,11vw,148px);
+    line-height:.92;letter-spacing:-.04em;
+    text-wrap:balance;
+  }
+  h1.name em{font-style:italic;color:var(--accent-soft);font-weight:300}
+  .hero-foot{
+    margin-top:56px;display:grid;grid-template-columns:1fr auto;gap:40px;align-items:end;
+  }
+  .tagline{font-family:'Fraunces',serif;font-style:italic;font-size:22px;color:var(--muted);max-width:520px;line-height:1.45}
+  .tagline span{color:var(--ink);font-style:normal;font-family:'Inter',sans-serif;font-size:15px;display:block;margin-top:14px;letter-spacing:.02em}
+  .availability{
+    font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--muted);
+    text-align:right;letter-spacing:.05em;line-height:1.8;
+  }
+  .availability b{color:var(--ink);font-weight:500}
+
+  /* SECTION */
+  section{padding:96px 0;border-bottom:1px solid var(--line)}
+  .sec-grid{display:grid;grid-template-columns:200px 1fr;gap:60px;align-items:start}
+  .sec-label{
+    font-family:'JetBrains Mono',monospace;font-size:11px;
+    letter-spacing:.18em;text-transform:uppercase;color:var(--muted);
+    position:sticky;top:30px;
+  }
+  .sec-label::before{content:"";display:block;width:32px;height:1px;background:var(--accent);margin-bottom:14px}
+
+  /* ABOUT */
+  .about p{font-family:'Fraunces',serif;font-size:26px;line-height:1.4;font-weight:300;letter-spacing:-.01em;color:var(--ink);max-width:720px}
+  .about p + p{margin-top:24px;font-size:17px;color:var(--muted);font-family:'Inter',sans-serif;font-weight:400;letter-spacing:0}
+
+  /* WORK */
+  .job{padding:32px 0;border-top:1px solid var(--line);display:grid;grid-template-columns:120px 1fr;gap:40px}
+  .job:first-child{border-top:none;padding-top:0}
+  .job-date{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--muted);letter-spacing:.05em;padding-top:6px}
+  .job-title{font-family:'Fraunces',serif;font-size:28px;font-weight:400;letter-spacing:-.01em;line-height:1.15}
+  .job-co{color:var(--accent-soft);font-style:italic}
+  .job-body{margin-top:14px;color:var(--muted);font-size:15px;max-width:640px}
+  .job-tags{margin-top:18px;display:flex;flex-wrap:wrap;gap:8px}
+  .tag{
+    font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.08em;
+    text-transform:uppercase;color:var(--muted);
+    border:1px solid var(--line);padding:5px 10px;border-radius:999px;
   }
 
-  @media (max-width: 600px) {
-    .wrap { padding: 48px 24px 80px; }
-    h1 { font-size: 26px; }
-    .skills { grid-template-columns: 1fr; gap: 4px 0; }
-    .skills dd { margin-bottom: 12px; }
-    .job-head, .edu-row { flex-direction: column; gap: 2px; }
+  /* SKILLS */
+  .skills-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:32px 48px}
+  .skill-row{border-top:1px solid var(--line);padding-top:18px}
+  .skill-row dt{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
+  .skill-row dd{font-family:'Fraunces',serif;font-size:20px;line-height:1.35;font-weight:400}
+
+  /* PROJECTS */
+  .project{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:baseline;padding:28px 0;border-top:1px solid var(--line)}
+  .project:first-child{border-top:none;padding-top:0}
+  .project h3{font-family:'Fraunces',serif;font-size:32px;font-weight:400;letter-spacing:-.02em}
+  .project p{color:var(--muted);margin-top:6px;max-width:620px}
+  .project .meta{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--muted);letter-spacing:.05em;text-align:right;white-space:nowrap}
+
+  /* EDU */
+  .edu{display:grid;grid-template-columns:120px 1fr auto;gap:40px;padding:22px 0;border-top:1px solid var(--line)}
+  .edu:first-child{border-top:none;padding-top:0}
+  .edu .e-date{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--muted);letter-spacing:.05em;padding-top:4px}
+  .edu .e-main{font-family:'Fraunces',serif;font-size:20px;font-weight:400}
+  .edu .e-sub{color:var(--muted);font-size:14px;margin-top:2px}
+  .edu .e-loc{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--muted);text-align:right}
+
+  /* CONTACT */
+  .contact-block{padding:120px 0 80px;text-align:left}
+  .contact-block .big{
+    font-family:'Fraunces',serif;font-style:italic;font-weight:300;
+    font-size:clamp(40px,8vw,96px);line-height:.95;letter-spacing:-.03em;
+    text-wrap:balance;
+  }
+  .contact-block .big a{border-bottom:2px solid var(--accent);padding-bottom:6px;transition:color .2s}
+  .contact-block .big a:hover{color:var(--accent)}
+  .contact-rows{margin-top:64px;display:grid;grid-template-columns:repeat(2,1fr);gap:24px;max-width:680px}
+  .contact-rows a{
+    display:flex;justify-content:space-between;align-items:center;
+    padding:18px 0;border-top:1px solid var(--line);
+    font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;
+    transition:color .2s;
+  }
+  .contact-rows a:hover{color:var(--accent)}
+  .contact-rows a::after{content:"→";color:var(--muted);transition:transform .2s}
+  .contact-rows a:hover::after{transform:translateX(4px);color:var(--accent)}
+
+  footer{
+    padding:32px 0 48px;border-top:1px solid var(--line);
+    display:flex;justify-content:space-between;
+    font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;
+  }
+
+  @media (max-width:760px){
+    .shell{padding:0 24px}
+    nav.top .links{display:none}
+    header.hero{padding:48px 0 64px}
+    .hero-foot{grid-template-columns:1fr;gap:32px}
+    .availability{text-align:left}
+    section{padding:64px 0}
+    .sec-grid{grid-template-columns:1fr;gap:24px}
+    .sec-label{position:static}
+    .job,.edu{grid-template-columns:1fr;gap:8px}
+    .skills-grid{grid-template-columns:1fr}
+    .project{grid-template-columns:1fr}
+    .project .meta{text-align:left}
+    .contact-rows{grid-template-columns:1fr}
   }
 </style>
 </head>
-<body>
-<div class="wrap">
+<body class="grain">
 
-  <header>
-    <h1>Vikas Dulgunde</h1>
-    <p class="role">Backend Engineer, Node.js and TypeScript</p>
-    <div class="meta">
-      <span>London, UK</span>
-      <a href="mailto:dulgundevikaas1999@gmail.com">dulgundevikaas1999@gmail.com</a>
-      <a href="https://github.com/vikasdc" target="_blank" rel="noreferrer">github.com/vikasdc</a>
-      <a href="https://www.linkedin.com/in/vikas-d-bb5846153/" target="_blank" rel="noreferrer">LinkedIn</a>
+<div class="shell">
+
+  <nav class="top">
+    <a href="/"><span class="dot"></span>Vikas Dulgunde</a>
+    <div class="links">
+      <a href="#work">Work</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+      <a href="https://github.com/vikasdc" target="_blank" rel="noreferrer">GitHub ↗</a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="kicker">Backend Engineer · London · Available Q3 2026</div>
+    <h1 class="name">Vikas<br/><em>Dulgunde.</em></h1>
+    <div class="hero-foot">
+      <p class="tagline">
+        I build the quiet machinery behind products people use every day.
+        <span>Six years of Node.js and TypeScript. APIs, microservices, the boring stuff that has to work.</span>
+      </p>
+      <div class="availability">
+        <b>STATUS</b><br/>
+        Open to UK roles<br/>
+        MSc · Hertfordshire<br/>
+        2025 → 2026
+      </div>
     </div>
   </header>
 
-  <section>
-    <h2>About</h2>
-    <p class="lead">I build backend services. Six years of writing Node.js and TypeScript in production, mostly REST APIs, microservices, and the unglamorous plumbing that keeps them running.</p>
-    <p>Currently doing an MSc in Computer Science at the University of Hertfordshire while looking for backend roles in the UK. Most recently shipped 30+ microservices and 500+ REST endpoints at Incedo Inc., and led API security onboarding with 42Crunch and SonarQube.</p>
+  <!-- ABOUT -->
+  <section class="about">
+    <div class="sec-grid">
+      <div class="sec-label">01 / About</div>
+      <div>
+        <p>I write backends. Mostly Node.js, mostly in TypeScript, mostly the kind of work that never makes the changelog but keeps the lights on.</p>
+        <p>Before moving to London for an MSc at the University of Hertfordshire, I spent three years at Incedo Inc. shipping production services and another three before that building full-stack work for an edu-tech studio. I care about clean APIs, honest error handling, and not breaking things at 2am.</p>
+      </div>
+    </div>
   </section>
 
-  <section>
-    <h2>Skills</h2>
-    <dl class="skills">
-      <dt>Languages</dt><dd>TypeScript, JavaScript, Python, Java</dd>
-      <dt>Backend</dt><dd>Node.js, Express, REST, WebSockets, Microservices</dd>
-      <dt>Data</dt><dd>MongoDB, PostgreSQL, Redis</dd>
-      <dt>Platform</dt><dd>Docker, DigitalOcean, Argo CD, Git</dd>
-      <dt>Security</dt><dd>42Crunch, SonarQube, OWASP</dd>
-    </dl>
-  </section>
+  <!-- WORK -->
+  <section id="work">
+    <div class="sec-grid">
+      <div class="sec-label">02 / Work</div>
+      <div>
 
-  <section>
-    <h2>Experience</h2>
-
-    <div class="job">
-      <div class="job-head">
-        <div>
-          <div class="job-title">Software Engineer</div>
-          <div class="job-co">Incedo Inc.</div>
+        <div class="job">
+          <div class="job-date">2022 — 2025</div>
+          <div>
+            <div class="job-title">Software Engineer<br/><span class="job-co">Incedo Inc.</span></div>
+            <p class="job-body">Designed and shipped 30+ microservices and 500+ REST endpoints across internal platforms. Led the API security initiative, onboarding services to 42Crunch and SonarQube and closing the long tail of OWASP findings. Built real-time features over WebSockets and stabilised legacy services that had been on call rotations for months. Received the internal "Made a Difference" award.</p>
+            <div class="job-tags">
+              <span class="tag">Node.js</span><span class="tag">TypeScript</span>
+              <span class="tag">Microservices</span><span class="tag">MongoDB</span>
+              <span class="tag">42Crunch</span><span class="tag">Argo CD</span>
+            </div>
+          </div>
         </div>
-        <div class="job-date">Jul 2022 — Aug 2025</div>
-      </div>
-      <ul>
-        <li>Designed and shipped 30+ microservices and 500+ REST APIs across internal platforms.</li>
-        <li>Led the API security initiative, onboarding services to 42Crunch and SonarQube and closing the long tail of OWASP findings.</li>
-        <li>Built real-time features over WebSockets and stabilised legacy services that had been on call rotations for months.</li>
-        <li>Received the internal "Made a Difference" award for security and reliability work.</li>
-      </ul>
-    </div>
 
-    <div class="job">
-      <div class="job-head">
-        <div>
-          <div class="job-title">Full Stack Developer</div>
-          <div class="job-co">CodeMania Edu Tech</div>
+        <div class="job">
+          <div class="job-date">2019 — 2022</div>
+          <div>
+            <div class="job-title">Full Stack Developer<br/><span class="job-co">CodeMania Edu Tech</span></div>
+            <p class="job-body">Shipped 5+ production websites with custom CMS modules used by non-technical staff. Owned deployments and infrastructure on DigitalOcean, including monitoring, backups, and the occasional 3am rollback.</p>
+            <div class="job-tags">
+              <span class="tag">Node.js</span><span class="tag">React</span>
+              <span class="tag">PostgreSQL</span><span class="tag">DigitalOcean</span>
+            </div>
+          </div>
         </div>
-        <div class="job-date">Jun 2019 — Jun 2022</div>
+
       </div>
-      <ul>
-        <li>Shipped 5+ production websites with custom CMS modules used by non-technical staff.</li>
-        <li>Owned deployments and infrastructure on DigitalOcean, including monitoring and backups.</li>
-      </ul>
     </div>
   </section>
 
+  <!-- SKILLS -->
   <section>
-    <h2>Projects</h2>
-    <div class="job">
-      <div class="job-head">
-        <div class="job-title">Crypto Trading Bot</div>
-        <div class="job-date">Side project</div>
-      </div>
-      <p style="margin-top:8px; color:var(--muted); font-size:15px;">Telegram bot wired into Binance and Bybit APIs. Handles signals, order execution, and position tracking for around 50 active users. Node.js, TypeScript, MongoDB.</p>
+    <div class="sec-grid">
+      <div class="sec-label">03 / Toolkit</div>
+      <dl class="skills-grid">
+        <div class="skill-row"><dt>Languages</dt><dd>TypeScript, JavaScript, Python, Java</dd></div>
+        <div class="skill-row"><dt>Backend</dt><dd>Node.js, Express, REST, WebSockets, Microservices</dd></div>
+        <div class="skill-row"><dt>Data</dt><dd>MongoDB, PostgreSQL, Redis</dd></div>
+        <div class="skill-row"><dt>Platform</dt><dd>Docker, DigitalOcean, Argo CD, Git</dd></div>
+        <div class="skill-row"><dt>Security</dt><dd>42Crunch, SonarQube, OWASP</dd></div>
+        <div class="skill-row"><dt>Practice</dt><dd>API design, code review, on-call</dd></div>
+      </dl>
     </div>
   </section>
 
-  <section>
-    <h2>Education</h2>
-    <div class="edu-row">
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="sec-grid">
+      <div class="sec-label">04 / Projects</div>
       <div>
-        <div class="edu-main">MSc Computer Science</div>
-        <div class="edu-sub">University of Hertfordshire</div>
+        <div class="project">
+          <div>
+            <h3>Crypto Trading Bot</h3>
+            <p>A Telegram bot wired into Binance and Bybit. Signal parsing, order execution, position tracking. Around 50 active users, mostly friends who keep finding new edge cases for me.</p>
+          </div>
+          <div class="meta">Node · TS · Mongo<br/>2023 — present</div>
+        </div>
       </div>
-      <div class="edu-date">Sep 2025 — Sep 2026</div>
-    </div>
-    <div class="edu-row">
-      <div>
-        <div class="edu-main">BTech Computer Science</div>
-        <div class="edu-sub">Avanthi Institute of Engineering and Technology</div>
-      </div>
-      <div class="edu-date">Jun 2019 — Jul 2022</div>
-    </div>
-    <div class="edu-row">
-      <div>
-        <div class="edu-main">Complete Node.js Developer Course</div>
-        <div class="edu-sub">Udemy certification</div>
-      </div>
-      <div class="edu-date">2019</div>
     </div>
   </section>
 
+  <!-- EDUCATION -->
   <section>
-    <h2>Contact</h2>
-    <p>Open to backend engineering roles in the UK. The fastest way to reach me is email.</p>
-    <div class="meta" style="margin-top:8px;">
-      <a href="mailto:dulgundevikaas1999@gmail.com">dulgundevikaas1999@gmail.com</a>
-      <a href="https://www.linkedin.com/in/vikas-d-bb5846153/" target="_blank" rel="noreferrer">LinkedIn</a>
-      <a href="https://github.com/vikasdc" target="_blank" rel="noreferrer">GitHub</a>
+    <div class="sec-grid">
+      <div class="sec-label">05 / Education</div>
+      <div>
+        <div class="edu">
+          <div class="e-date">2025 — 2026</div>
+          <div><div class="e-main">MSc, Computer Science</div><div class="e-sub">University of Hertfordshire</div></div>
+          <div class="e-loc">Hatfield, UK</div>
+        </div>
+        <div class="edu">
+          <div class="e-date">2019 — 2022</div>
+          <div><div class="e-main">BTech, Computer Science</div><div class="e-sub">Avanthi Institute of Engineering & Technology</div></div>
+          <div class="e-loc">India</div>
+        </div>
+        <div class="edu">
+          <div class="e-date">2019</div>
+          <div><div class="e-main">Complete Node.js Developer Course</div><div class="e-sub">Andrew Mead · Udemy</div></div>
+          <div class="e-loc">Certificate</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" style="border-bottom:none">
+    <div class="contact-block">
+      <div class="kicker">06 / Contact</div>
+      <div class="big" style="margin-top:24px">
+        Hiring backend?<br/>
+        Let's <a href="mailto:dulgundevikaas1999@gmail.com">talk</a>.
+      </div>
+      <div class="contact-rows">
+        <a href="mailto:dulgundevikaas1999@gmail.com">Email</a>
+        <a href="https://www.linkedin.com/in/vikas-d-bb5846153/" target="_blank" rel="noreferrer">LinkedIn</a>
+        <a href="https://github.com/vikasdc" target="_blank" rel="noreferrer">GitHub</a>
+        <a href="tel:+447000000000">Phone on request</a>
+      </div>
     </div>
   </section>
 
   <footer>
-    <span>Vikas Dulgunde</span>
-    <span>London, 2026</span>
+    <span>© 2026 Vikas Dulgunde</span>
+    <span>Built in London</span>
   </footer>
 
 </div>
