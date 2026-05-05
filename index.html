@@ -1,346 +1,255 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Vikas Dulgunde, Node.js Engineer</title>
-<meta name="description" content="Vikas Dulgunde. Node.js and TypeScript engineer in London. Six years on production microservices. Available October 2026." />
-<meta property="og:title" content="Vikas Dulgunde, Node.js Engineer" />
-<meta property="og:description" content="Six years on production Node.js microservices. London. Available October 2026." />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Newsreader:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Vikas Dulgunde — Backend Engineer</title>
+<meta name="description" content="Backend engineer with 6 years of experience building Node.js and TypeScript services, REST APIs, and secure microservices." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-  :root{
-    --paper:#f4f1ea;
-    --ink:#17150f;
-    --soft:#5c574c;
-    --line:#1715100f;
-    --rule:#171510;
-    --mark:#c8341a;
+  :root {
+    --bg: #ffffff;
+    --ink: #0f172a;
+    --muted: #475569;
+    --line: #e2e8f0;
+    --accent: #2563eb;
+    --chip: #f1f5f9;
   }
-  *{box-sizing:border-box;margin:0;padding:0}
-  html,body{background:var(--paper);color:var(--ink)}
-  body{
-    font-family:'JetBrains Mono',ui-monospace,monospace;
-    font-size:14px;line-height:1.55;font-weight:400;
-    -webkit-font-smoothing:antialiased;
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: var(--ink);
+    background: var(--bg);
+    line-height: 1.6;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
   }
-  ::selection{background:var(--mark);color:var(--paper)}
-  a{color:inherit;text-decoration:none}
-  a.link{border-bottom:1px solid var(--ink);padding-bottom:1px}
-  a.link:hover{color:var(--mark);border-color:var(--mark)}
-  .serif{font-family:'Newsreader',Georgia,serif;font-weight:400}
-  .it{font-style:italic}
-  .mark{color:var(--mark)}
-  .soft{color:var(--soft)}
+  .wrap { max-width: 760px; margin: 0 auto; padding: 80px 32px 120px; }
+  ::selection { background: var(--accent); color: #fff; }
 
-  .page{max-width:1100px;margin:0 auto;padding:0 28px}
+  header { margin-bottom: 64px; }
+  h1 {
+    font-size: 32px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    margin: 0 0 8px;
+  }
+  .role { color: var(--muted); font-size: 16px; margin: 0 0 20px; }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 20px;
+    font-size: 14px;
+    color: var(--muted);
+  }
+  .meta a { color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--line); }
+  .meta a:hover { border-color: var(--accent); color: var(--accent); }
 
-  /* Top bar */
-  .bar{
-    display:grid;grid-template-columns:1fr auto 1fr;align-items:center;
-    border-bottom:1px solid var(--rule);padding:14px 0;
-    font-size:11px;letter-spacing:.06em;text-transform:uppercase;
+  section { margin-top: 56px; }
+  h2 {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--muted);
+    margin: 0 0 24px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--line);
   }
-  .bar .c{text-align:center}
-  .bar .r{text-align:right}
-  .bar .dot{display:inline-block;width:6px;height:6px;background:var(--mark);border-radius:50%;margin-right:6px;vertical-align:middle;animation:blink 1.6s steps(2) infinite}
-  @keyframes blink{50%{opacity:.25}}
+  p { margin: 0 0 16px; }
+  p.lead { font-size: 17px; }
 
-  /* Masthead */
-  .mast{
-    border-bottom:2px solid var(--rule);
-    padding:48px 0 36px;position:relative;
+  .job { margin-bottom: 32px; }
+  .job:last-child { margin-bottom: 0; }
+  .job-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+    margin-bottom: 4px;
   }
-  .mast .kicker{
-    display:flex;justify-content:space-between;font-size:11px;
-    text-transform:uppercase;letter-spacing:.12em;color:var(--soft);
-    border-bottom:1px solid var(--line);padding-bottom:14px;margin-bottom:28px;
+  .job-title { font-weight: 600; font-size: 16px; }
+  .job-co { color: var(--muted); font-size: 14px; }
+  .job-date {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--muted);
+    white-space: nowrap;
   }
-  .mast h1{
-    font-family:'Newsreader',Georgia,serif;font-weight:400;
-    font-size:clamp(64px,12vw,148px);line-height:.92;letter-spacing:-.03em;
-  }
-  .mast h1 .sub{display:block;font-style:italic;color:var(--mark);font-size:.7em;margin-top:4px}
-  .mast .strap{
-    display:grid;grid-template-columns:repeat(4,1fr);gap:0;
-    border-top:1px solid var(--line);margin-top:32px;
-  }
-  .mast .strap div{
-    padding:14px 16px 14px 0;border-right:1px solid var(--line);
-    font-size:11px;text-transform:uppercase;letter-spacing:.08em;
-  }
-  .mast .strap div:last-child{border-right:none}
-  .mast .strap b{display:block;font-family:'Newsreader',serif;font-style:italic;font-weight:400;font-size:18px;text-transform:none;letter-spacing:0;color:var(--ink);margin-top:4px}
+  ul { margin: 12px 0 0; padding-left: 18px; }
+  li { margin-bottom: 6px; color: var(--muted); }
+  li::marker { color: var(--line); }
 
-  /* Section */
-  section{border-bottom:1px solid var(--rule);padding:56px 0}
-  .head{
-    display:grid;grid-template-columns:80px 1fr;gap:24px;align-items:baseline;
-    margin-bottom:36px;
+  .skills { display: grid; grid-template-columns: 140px 1fr; gap: 16px 24px; font-size: 14px; }
+  .skills dt {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding-top: 2px;
   }
-  .head .num{font-size:11px;letter-spacing:.1em;color:var(--mark)}
-  .head h2{
-    font-family:'Newsreader',serif;font-weight:400;
-    font-size:clamp(34px,5vw,52px);line-height:1;letter-spacing:-.015em;
+  .skills dd { margin: 0; color: var(--ink); }
+
+  .edu-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 16px;
   }
-  .head h2 .it{color:var(--soft)}
-
-  /* About */
-  .about{display:grid;grid-template-columns:80px 1fr;gap:24px}
-  .about .body{max-width:62ch}
-  .about p{margin-bottom:16px;font-size:15px;line-height:1.7}
-  .about p.lead{font-family:'Newsreader',serif;font-size:22px;line-height:1.45}
-
-  /* Toolkit table */
-  .kit{display:grid;grid-template-columns:80px 1fr}
-  .kit .rows{border-top:1px solid var(--line)}
-  .kit .row{
-    display:grid;grid-template-columns:170px 1fr;gap:24px;
-    padding:14px 0;border-bottom:1px solid var(--line);
+  .edu-row:last-child { margin-bottom: 0; }
+  .edu-main { font-size: 15px; }
+  .edu-sub { color: var(--muted); font-size: 14px; }
+  .edu-date {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--muted);
+    white-space: nowrap;
   }
-  .kit .row .k{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--soft)}
-  .kit .row .v{font-size:14px}
 
-  /* Work */
-  .job{display:grid;grid-template-columns:80px 1fr;gap:24px;padding:24px 0;border-top:1px solid var(--line)}
-  .job:first-child{border-top:none;padding-top:0}
-  .job .meta{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--soft)}
-  .job h3{font-family:'Newsreader',serif;font-weight:400;font-size:30px;line-height:1.1;margin-bottom:6px}
-  .job .co{font-size:12px;color:var(--mark);text-transform:uppercase;letter-spacing:.1em;margin-bottom:18px}
-  .job ul{list-style:none}
-  .job li{
-    display:grid;grid-template-columns:24px 1fr;gap:8px;
-    padding:8px 0;border-top:1px dashed var(--line);font-size:14px;line-height:1.6;
+  footer {
+    margin-top: 80px;
+    padding-top: 24px;
+    border-top: 1px solid var(--line);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--muted);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
   }
-  .job li:first-child{border-top:none}
-  .job li .b{color:var(--mark);font-weight:500}
-  .job li b{font-weight:500;color:var(--ink)}
 
-  /* Project */
-  .proj{display:grid;grid-template-columns:80px 1fr;gap:24px}
-  .card{border:1px solid var(--rule);padding:28px;background:transparent}
-  .card .tag{font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--mark);margin-bottom:14px}
-  .card h3{font-family:'Newsreader',serif;font-weight:400;font-size:34px;line-height:1.05;margin-bottom:6px}
-  .card .stack{font-size:12px;color:var(--soft);margin-bottom:20px}
-  .card ul{list-style:none}
-  .card li{padding:8px 0;border-top:1px solid var(--line);font-size:14px}
-  .card li:first-child{border-top:none}
-  .card li b{font-weight:500}
-
-  /* Education */
-  .edu{display:grid;grid-template-columns:80px 1fr;gap:24px}
-  .edu .row{display:grid;grid-template-columns:170px 1fr 120px;gap:24px;padding:18px 0;border-top:1px solid var(--line);align-items:baseline}
-  .edu .row:first-child{border-top:none;padding-top:0}
-  .edu .row .when{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--soft)}
-  .edu .row h3{font-family:'Newsreader',serif;font-weight:400;font-size:20px;line-height:1.2}
-  .edu .row .where{font-size:12px;color:var(--soft);margin-top:2px}
-  .edu .row .tag{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--mark);text-align:right}
-
-  /* Contact */
-  .contact{padding:80px 0;border-bottom:1px solid var(--rule)}
-  .contact .grid{display:grid;grid-template-columns:80px 1fr;gap:24px}
-  .contact h2{
-    font-family:'Newsreader',serif;font-weight:400;
-    font-size:clamp(40px,7vw,84px);line-height:1;letter-spacing:-.02em;
-    margin-bottom:36px;max-width:18ch;
-  }
-  .contact .channels{display:grid;grid-template-columns:repeat(2,1fr);gap:0;border-top:1px solid var(--line)}
-  .contact .channels a{
-    display:flex;justify-content:space-between;align-items:center;
-    padding:18px 0;border-bottom:1px solid var(--line);
-    font-size:14px;text-transform:uppercase;letter-spacing:.06em;
-  }
-  .contact .channels a .v{font-family:'Newsreader',serif;font-style:italic;font-size:18px;text-transform:none;letter-spacing:0;color:var(--mark)}
-  .contact .channels a:hover .v{text-decoration:underline}
-
-  /* Foot */
-  .foot{
-    display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px;
-    padding:24px 0;font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--soft);
-  }
-  .foot .c{text-align:center}
-  .foot .r{text-align:right}
-
-  @media (max-width:760px){
-    .bar{grid-template-columns:1fr 1fr;font-size:10px}
-    .bar .c{display:none}
-    .mast .strap{grid-template-columns:repeat(2,1fr)}
-    .mast .strap div:nth-child(2){border-right:none}
-    .head,.about,.kit,.job,.proj,.edu,.contact .grid{grid-template-columns:1fr;gap:14px}
-    .head .num,.about .num,.kit .num{display:block}
-    .kit .row,.edu .row{grid-template-columns:1fr}
-    .edu .row .tag{text-align:left}
-    .contact .channels{grid-template-columns:1fr}
-    .foot{grid-template-columns:1fr;text-align:left}
-    .foot .c,.foot .r{text-align:left}
+  @media (max-width: 600px) {
+    .wrap { padding: 48px 24px 80px; }
+    h1 { font-size: 26px; }
+    .skills { grid-template-columns: 1fr; gap: 4px 0; }
+    .skills dd { margin-bottom: 12px; }
+    .job-head, .edu-row { flex-direction: column; gap: 2px; }
   }
 </style>
 </head>
 <body>
+<div class="wrap">
 
-<div class="page">
-
-  <div class="bar">
-    <div class="l"><span class="dot"></span>Available 01.10.2026</div>
-    <div class="c">Vikas Dulgunde, Vol. 01</div>
-    <div class="r">London, 51.5074&deg; N</div>
-  </div>
-
-  <header class="mast">
-    <div class="kicker">
-      <span>Portfolio / Backend Engineering</span>
-      <span>Issue 01 / 2026</span>
-    </div>
-    <h1>
-      Vikas <span class="it">Dulgunde</span>
-      <span class="sub">writes Node.js for a living.</span>
-    </h1>
-    <div class="strap">
-      <div>Discipline<b>Backend, APIs</b></div>
-      <div>Years<b>Six, in production</b></div>
-      <div>Based<b>London, UK</b></div>
-      <div>Status<b>Open from Oct 2026</b></div>
+  <header>
+    <h1>Vikas Dulgunde</h1>
+    <p class="role">Backend Engineer, Node.js and TypeScript</p>
+    <div class="meta">
+      <span>London, UK</span>
+      <a href="mailto:dulgundevikaas1999@gmail.com">dulgundevikaas1999@gmail.com</a>
+      <a href="https://github.com/vikasdc" target="_blank" rel="noreferrer">github.com/vikasdc</a>
+      <a href="https://www.linkedin.com/in/vikas-d-bb5846153/" target="_blank" rel="noreferrer">LinkedIn</a>
     </div>
   </header>
 
-  <section id="about">
-    <div class="head"><div class="num">/ 01</div><h2>The <span class="it">short</span> version.</h2></div>
-    <div class="about">
-      <div class="num"></div>
-      <div class="body">
-        <p class="lead">Six years writing and reviewing production Node.js and TypeScript across enterprise microservice estates. I care about REST APIs that hold up under load, shared platform code other engineers actually want to use, and performance work that shows up in p95.</p>
-        <p>I work the way modern teams ship. Daily pull request review, SonarQube quality gates, automated tests, bi&#8209;weekly Argo CD releases. I use AI tooling every day and I'm fast at telling the difference between code worth keeping and code worth deleting.</p>
-        <p>Currently finishing an MSc in Computer Science at the University of Hertfordshire. Graduating September 2026, available full&#8209;time from 1 October 2026 with full UK right to work via the Graduate Route.</p>
-      </div>
-    </div>
+  <section>
+    <h2>About</h2>
+    <p class="lead">I build backend services. Six years of writing Node.js and TypeScript in production, mostly REST APIs, microservices, and the unglamorous plumbing that keeps them running.</p>
+    <p>Currently doing an MSc in Computer Science at the University of Hertfordshire while looking for backend roles in the UK. Most recently shipped 30+ microservices and 500+ REST endpoints at Incedo Inc., and led API security onboarding with 42Crunch and SonarQube.</p>
   </section>
 
-  <section id="toolkit">
-    <div class="head"><div class="num">/ 02</div><h2>Toolkit, <span class="it">honestly used.</span></h2></div>
-    <div class="kit">
-      <div class="num"></div>
-      <div class="rows">
-        <div class="row"><div class="k">Languages</div><div class="v">TypeScript, JavaScript, Python, Java, C++, SQL</div></div>
-        <div class="row"><div class="k">Backend</div><div class="v">Node.js, Express, REST API design, Microservices, WebSockets</div></div>
-        <div class="row"><div class="k">Data</div><div class="v">MongoDB, PostgreSQL</div></div>
-        <div class="row"><div class="k">Platform</div><div class="v">Docker, Linux / Ubuntu, DigitalOcean, Argo CD, Git, CI/CD</div></div>
-        <div class="row"><div class="k">Quality, Security</div><div class="v">SonarQube, 42Crunch, code review, automated testing, observability</div></div>
-        <div class="row"><div class="k">Working knowledge</div><div class="v">React, HTML5, CSS3, Bootstrap</div></div>
-        <div class="row"><div class="k">Practices</div><div class="v">SOLID, clean architecture, performance tuning, root cause analysis, agile / Scrum</div></div>
-      </div>
-    </div>
+  <section>
+    <h2>Skills</h2>
+    <dl class="skills">
+      <dt>Languages</dt><dd>TypeScript, JavaScript, Python, Java</dd>
+      <dt>Backend</dt><dd>Node.js, Express, REST, WebSockets, Microservices</dd>
+      <dt>Data</dt><dd>MongoDB, PostgreSQL, Redis</dd>
+      <dt>Platform</dt><dd>Docker, DigitalOcean, Argo CD, Git</dd>
+      <dt>Security</dt><dd>42Crunch, SonarQube, OWASP</dd>
+    </dl>
   </section>
 
-  <section id="work">
-    <div class="head"><div class="num">/ 03</div><h2>Work, <span class="it">in order.</span></h2></div>
-    <div>
-      <div class="job">
-        <div class="meta">2022 / 2025<br/>Hyderabad<br/>Hybrid</div>
+  <section>
+    <h2>Experience</h2>
+
+    <div class="job">
+      <div class="job-head">
         <div>
-          <h3>Software Engineer</h3>
-          <div class="co">Incedo Inc · Verizon account</div>
-          <ul>
-            <li><span class="b">01.</span><span>Designed and maintained Express REST APIs across an estate of 30+ microservices, shipping <b>500+ REST APIs</b> in active production use.</span></li>
-            <li><span class="b">02.</span><span>Built a <b>reusable logging and exception handling package</b> adopted across all 30+ services. A shared platform component that raised debugging quality and gave teams one consistent way to surface production errors.</span></li>
-            <li><span class="b">03.</span><span>Cut average API response time by <b>around 40%</b> through compression, payload tuning and tighter request handling.</span></li>
-            <li><span class="b">04.</span><span>Led <b>API security onboarding with 42Crunch</b> across 30+ microservices, coordinating rollout with an 11&#8209;person engineering team and aligning services with enterprise standards.</span></li>
-            <li><span class="b">05.</span><span>Operated end&#8209;to&#8209;end CI/CD. Daily PR review, SonarQube gates, automated testing, bi&#8209;weekly Argo CD releases.</span></li>
-            <li><span class="b">06.</span><span>Owned production support and root cause analysis. Turned recurring incidents into preventative refactors and tighter quality gates.</span></li>
-            <li><span class="b">07.</span><span>Recognised with the <b>Made a Difference Award</b> for cross&#8209;team engineering contribution.</span></li>
-          </ul>
+          <div class="job-title">Software Engineer</div>
+          <div class="job-co">Incedo Inc.</div>
         </div>
+        <div class="job-date">Jul 2022 — Aug 2025</div>
       </div>
+      <ul>
+        <li>Designed and shipped 30+ microservices and 500+ REST APIs across internal platforms.</li>
+        <li>Led the API security initiative, onboarding services to 42Crunch and SonarQube and closing the long tail of OWASP findings.</li>
+        <li>Built real-time features over WebSockets and stabilised legacy services that had been on call rotations for months.</li>
+        <li>Received the internal "Made a Difference" award for security and reliability work.</li>
+      </ul>
+    </div>
 
-      <div class="job">
-        <div class="meta">2018 / 2022<br/>Hyderabad<br/>On&#8209;site</div>
+    <div class="job">
+      <div class="job-head">
         <div>
-          <h3>Full Stack JavaScript Developer</h3>
-          <div class="co">CodeMania Edu Tech · Promoted from Frontend Intern</div>
-          <ul>
-            <li><span class="b">01.</span><span>Delivered <b>5+ production websites</b> in Node.js, Express and MongoDB. Owned the full stack from REST APIs to user&#8209;facing UI.</span></li>
-            <li><span class="b">02.</span><span>Built CMS modules including authentication, admin dashboards and CRUD workflows.</span></li>
-            <li><span class="b">03.</span><span>Wrote responsive front&#8209;end pages in HTML5, CSS3 and Bootstrap. Communicated technical trade&#8209;offs to non&#8209;technical stakeholders during scoping.</span></li>
-            <li><span class="b">04.</span><span>Deployed and maintained services on DigitalOcean (Linux / Ubuntu).</span></li>
-          </ul>
+          <div class="job-title">Full Stack Developer</div>
+          <div class="job-co">CodeMania Edu Tech</div>
         </div>
+        <div class="job-date">Jun 2019 — Jun 2022</div>
       </div>
+      <ul>
+        <li>Shipped 5+ production websites with custom CMS modules used by non-technical staff.</li>
+        <li>Owned deployments and infrastructure on DigitalOcean, including monitoring and backups.</li>
+      </ul>
     </div>
   </section>
 
-  <section id="projects">
-    <div class="head"><div class="num">/ 04</div><h2>Built on <span class="it">my own time.</span></h2></div>
-    <div class="proj">
-      <div class="num"></div>
-      <div class="card">
-        <div class="tag">Project / Live</div>
-        <h3>Crypto Trading Bot, <span class="it">Telegram</span></h3>
-        <div class="stack">Node.js · MongoDB · WebSockets · Binance &amp; Bybit APIs</div>
-        <ul>
-          <li>Integrated Binance and Bybit APIs for automated trade execution.</li>
-          <li>Built a WebSocket based, event driven copy&#8209;trading flow used by <b>around 50 users</b>.</li>
-          <li>Designed MongoDB backed configuration and Excel reporting (PnL, trade history) across <b>10+ bot features</b>.</li>
-        </ul>
+  <section>
+    <h2>Projects</h2>
+    <div class="job">
+      <div class="job-head">
+        <div class="job-title">Crypto Trading Bot</div>
+        <div class="job-date">Side project</div>
       </div>
+      <p style="margin-top:8px; color:var(--muted); font-size:15px;">Telegram bot wired into Binance and Bybit APIs. Handles signals, order execution, and position tracking for around 50 active users. Node.js, TypeScript, MongoDB.</p>
     </div>
   </section>
 
-  <section id="education">
-    <div class="head"><div class="num">/ 05</div><h2>Education, <span class="it">credentials.</span></h2></div>
-    <div class="edu">
-      <div class="num"></div>
+  <section>
+    <h2>Education</h2>
+    <div class="edu-row">
       <div>
-        <div class="row">
-          <div class="when">Sep 2025 / Sep 2026</div>
-          <div>
-            <h3>MSc Computer Science</h3>
-            <div class="where">University of Hertfordshire, United Kingdom</div>
-          </div>
-          <div class="tag">In progress</div>
-        </div>
-        <div class="row">
-          <div class="when">Jun 2019 / Jul 2022</div>
-          <div>
-            <h3>BTech Computer Science Engineering</h3>
-            <div class="where">Avanthi Institute of Engineering and Technology, India</div>
-          </div>
-          <div class="tag">Completed</div>
-        </div>
-        <div class="row">
-          <div class="when">2019</div>
-          <div>
-            <h3>The Complete Node.js Development Course</h3>
-            <div class="where">Udemy</div>
-          </div>
-          <div class="tag">Certified</div>
-        </div>
+        <div class="edu-main">MSc Computer Science</div>
+        <div class="edu-sub">University of Hertfordshire</div>
       </div>
+      <div class="edu-date">Sep 2025 — Sep 2026</div>
     </div>
-  </section>
-
-  <section id="contact" class="contact">
-    <div class="grid">
-      <div class="num soft" style="font-size:11px;letter-spacing:.1em">/ 06</div>
+    <div class="edu-row">
       <div>
-        <h2>Hiring backend engineers in London for an <span class="it mark">Oct 2026</span> start? Write to me.</h2>
-        <div class="channels">
-          <a href="mailto:dulgundevikaas1999@gmail.com"><span>Email</span><span class="v">dulgundevikaas1999@gmail.com</span></a>
-          <a href="tel:+447404826805"><span>Phone</span><span class="v">+44 7404 826805</span></a>
-          <a href="https://github.com/dulguvi" target="_blank" rel="noreferrer"><span>GitHub</span><span class="v">@dulguvi</span></a>
-          <a href="https://linkedin.com" target="_blank" rel="noreferrer"><span>LinkedIn</span><span class="v">in/vikas&#8209;dulgunde</span></a>
-        </div>
+        <div class="edu-main">BTech Computer Science</div>
+        <div class="edu-sub">Avanthi Institute of Engineering and Technology</div>
       </div>
+      <div class="edu-date">Jun 2019 — Jul 2022</div>
+    </div>
+    <div class="edu-row">
+      <div>
+        <div class="edu-main">Complete Node.js Developer Course</div>
+        <div class="edu-sub">Udemy certification</div>
+      </div>
+      <div class="edu-date">2019</div>
     </div>
   </section>
 
-  <div class="foot">
-    <div class="l">&copy; 2026 V. Dulgunde</div>
-    <div class="c">Set in Newsreader &amp; JetBrains Mono</div>
-    <div class="r">Last revised 05.05.2026</div>
-  </div>
+  <section>
+    <h2>Contact</h2>
+    <p>Open to backend engineering roles in the UK. The fastest way to reach me is email.</p>
+    <div class="meta" style="margin-top:8px;">
+      <a href="mailto:dulgundevikaas1999@gmail.com">dulgundevikaas1999@gmail.com</a>
+      <a href="https://www.linkedin.com/in/vikas-d-bb5846153/" target="_blank" rel="noreferrer">LinkedIn</a>
+      <a href="https://github.com/vikasdc" target="_blank" rel="noreferrer">GitHub</a>
+    </div>
+  </section>
+
+  <footer>
+    <span>Vikas Dulgunde</span>
+    <span>London, 2026</span>
+  </footer>
 
 </div>
-
 </body>
 </html>
